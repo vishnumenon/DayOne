@@ -22,7 +22,7 @@ h1 {
     text-align: center;
 }
 
-.minorButton {
+.minorButton,.goBack {
     display: inline-block;
     font-size:25px;
     font-family: 'Josefin Sans', Helvetica, sans;
@@ -175,6 +175,38 @@ h1 {
 .sectionAverage {
     text-align: right;
 }
+
+
+
+.headerList li{display:inline;}
+
+.goBack{background-image:url("http://www.clipartbest.com/cliparts/9Tz/Ez9/9TzEz9pLc.png"); background-size:100%; background-size: 73px auto; height: 75px; width: 75px;float:left;display: inline-block;
+  text-decoration:none;  font-size:25px;
+    font-family: 'Josefin Sans', Helvetica, sans;
+    color: white;
+    font-weight: 400;
+    padding-top: 24px;  border: 1px solid white ;
+    border-radius: 100%;
+    text-align:center;
+    background-color: transparent;  margin-left: 15px; margin-top: 15px;text-align:center;}
+.goBack:active, .goBack:hover{background-image:url();cursor: pointer;
+    background-color: white;
+    color: #363795;}
+
+.courseSettings,.courseSettingsHome{float:right; background-image:url("https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_settings_48px-128.png"); background-size: 100%; background-size: 75 px auto; display: inline-block;
+  text-decoration:none;  font-size:25px;
+    font-family: 'Josefin Sans', Helvetica, sans;
+    color: white;
+    font-weight: 400;
+    padding-top:24px;
+    border: 1px solid white ;
+    border-radius: 100%;
+    text-align:center;
+    background-color: transparent;height: 75px; width: 75px;  margin-right: 15px; margin-top: 15px; font-size: 20px; text-align:center;}
+.courseSettings:active, .courseSettings:hover,.courseSettingsHome:active, .courseSettingsHome:hover{background-image:url();cursor: pointer;
+    background-color: white;
+    color: #363795;}
+
 
 /* animations for page transitions */
 

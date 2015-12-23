@@ -1,6 +1,12 @@
-<h1 class = "courseTitle">{{ course.name }}</h1> 
+<ul class = "headerList">
+<li><a href = "#courses" class = "goBack"> Home </a></li>
+<li><a class = "courseSettings"> Settings </a></li>
+</ul>
+<h1 class = "courseTitle">{{ course.name }}</h1>
+
+
 <div id = "currentGrade"> Current Grade: {{ getCourseAverage(course) }} </div>
-<div id = "targetGrade"> Target Grade: TODO </div>
+<div id = "targetGrade"> Target Grade: Click Here to Set </div>
 <br />
 <br />
 <br />

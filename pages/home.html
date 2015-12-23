@@ -1,6 +1,9 @@
+<a class = "courseSettingsHome"> Settings </a>
 <h1>DayOne</h1>
+
 <ul id="courseList">
-    <a href="#courses/{{$index}}" ng-repeat="course in courses" ng-swipe-right="removeCourse($index)">
+</li>
+  <a href="#courses/{{$index}}" ng-repeat="course in courses" ng-swipe-right="removeCourse($index)">
     <li>
         <h2> {{course.name}} </h2> <h3>({{getCourseAverage(course)}}%)</h3>
     </li>
