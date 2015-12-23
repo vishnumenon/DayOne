@@ -1,7 +1,7 @@
 <h1>DayOne</h1>
 <ul id="courseList">
     <hr /> 
-    <li ng-repeat="course in courses">
+    <li ng-repeat="course in courses" ng-swipe-right="removeCourse($index)">
         <h2> {{course.name}} </h2> <h3>({{course.average}}%)</h3>
         <hr /> 
     </li>

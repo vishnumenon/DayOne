@@ -1,4 +1,5 @@
-var dayOneApp = angular.module('dayOneApp', ['ngRoute']);
+var dayOneApp = angular.module('dayOneApp', ['ngRoute', 'ngTouch']);
+
 dayOneApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
 		when('/courses', {
@@ -23,6 +24,9 @@ dayOneApp.controller('courseListController', ['$scope', '$http', function($scope
 			$scope.courses.push({name: $scope.courseName, average: 0});
 			$scope.courseName = '';
 		}
+	}
+	$scope.removeCourse = function(i) {
+		$scope.courses.splice(i, 1);
 	}
 }]);
 

@@ -1,0 +1,20 @@
+{
+  "name": "DayOne",
+  "homepage": "https://github.com/vishnumenon/DayOne",
+  "authors": [
+    "Vishnu Menon <me@vishnumenon.com>"
+  ],
+  "description": "DayOne Grade Calculator",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-route": "~1.4.8",
+    "angular-touch": "~1.4.8",
+    "angular": "~1.4.8",
+    "jquery": "~2.1.4",
+    "angular-local-storage": "~0.2.3",
+    "lawnchair": "~0.6.4"
+  }
+}
