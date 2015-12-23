@@ -1,4 +1,25 @@
-var dayOneApp = angular.module('dayOneApp', ['ngRoute', 'ngTouch']);
+var getSectionAverage = function(section) {
+	var poss = 0;
+	var tot = 0;
+	for(var i =0; i < section.items.length; i++) {
+		tot += section.items[i].points;
+		poss += section.items[i].possiblePoints;
+	}
+	if(tot === 0) return 0; 
+	return poss / tot;
+}
+
+var getCourseAverage = function(course) {
+	var acc = 0;
+	var sec;
+	for(var i = 0; i < course.sections.length; i++) {
+		sec = course.sections[i];
+		acc += getSectionAverage(sec) * (sec.weight / 100.0); 
+	}
+	return acc;
+}
+
+var dayOneApp = angular.module('dayOneApp', ['ngRoute', 'ngTouch', 'LocalStorageModule', 'ngAnimate']);
 
 dayOneApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
@@ -15,13 +36,26 @@ dayOneApp.config(['$routeProvider', function($routeProvider){
 		});
 }]);
 
-dayOneApp.controller('courseListController', ['$scope', '$http', function($scope, $http) {
-	$scope.courses = [
-		{name: 'CS 201: Data Structures and Algorithms', average: 10}
-	]
+dayOneApp.config(['localStorageServiceProvider', function(localStorageServiceProvider){
+  localStorageServiceProvider.setPrefix('d1');
+}]);
+
+dayOneApp.controller('courseListController', ['$scope', '$http', 'localStorageService', function($scope, $http, localStorageService) {
+	$scope.pageClass = 'page-list';
+
+	$scope.getCourseAverage = getCourseAverage;
+	var coursesInStore = localStorageService.get('courses');
+	$scope.courses = coursesInStore || [];
+	$scope.$watch('courses', function() {
+		localStorageService.set('courses', $scope.courses);
+	}, true);
+
 	$scope.addCourse = function() {
 		if($scope.courseName) {
-			$scope.courses.push({name: $scope.courseName, average: 0});
+			$scope.courses.push({
+				name: $scope.courseName,
+				sections: []
+			});
 			$scope.courseName = '';
 		}
 	}
@@ -30,6 +64,30 @@ dayOneApp.controller('courseListController', ['$scope', '$http', function($scope
 	}
 }]);
 
-dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', function($scope, $routeParams) {
-	$scope.courseId = $routeParams.courseId; 
+dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'localStorageService', function($scope, $routeParams, localStorageService) {
+	$scope.pageClass = 'page-details';
+
+	$scope.getCourseAverage = getCourseAverage;
+	$scope.getSectionAverage = getSectionAverage;
+	$scope.courses = localStorageService.get('courses');
+	$scope.course = $scope.courses[$routeParams.courseId];
+	$scope.$watch('courses', function() {
+		localStorageService.set('courses', $scope.courses);
+	}, true);
+
+
+	$scope.addSection = function() {
+		if($scope.sectionName && $scope.sectionWeight) {
+			$scope.course.sections.push({
+				name: $scope.sectionName, 
+				weight: $scope.sectionWeight,
+				items: []
+			});
+			$scope.sectionName = '';
+			$scope.sectionWeight = null;
+		}
+	}
+	$scope.removeSection = function(i) {
+		$scope.course.sections.splice(i, 1);
+	}
 }]);

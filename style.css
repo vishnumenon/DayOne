@@ -35,7 +35,7 @@ h1 {
     background-color: transparent;
 }
 
-.minorButton:hover {
+.minorButton:active, .minorButton:hover {
     cursor: pointer;
     background-color: white;
     color: #363795;
@@ -59,37 +59,50 @@ h1 {
     text-align:center;}
 
 
-.majorButton:hover {
+.majorButton:active, .majorButton:hover {
     cursor: pointer;
     border: 2px solid black ;
 }
 
-#courseList {
+#courseList, #sectionList {
     width: 100%;
     padding: 0;
     margin-bottom: 50px;
 }
 
-#courseList > li {
+#courseList li, #sectionList li {
     display: block;
     width: 100%;
     padding: 10px;
-    padding-bottom: 0;
+    border-top: 1px solid white;
     text-align: center;
 }
 
-#courseList > li > hr {
-    margin-top: 10px;
+#courseList a, #sectionList a {
+    text-decoration: none;
+    color: white;
 }
 
-#courseList > li > h2, #courseList > li > h3 {
+#courseList li:active, #courseList li:hover, #sectionList li:active, #sectionList li:hover   {
+    cursor: pointer;
+    background-color: white;
+    color: #363795;
+}
+
+#sectionList li.noHighlight:active, #sectionList li.noHighlight:hover, #courseList li.noHighlight:active, #courseList li.noHighlight:hover  {
+    cursor: auto;
+    background-color: transparent;
+    color: white;
+}
+
+#courseList  li > h2, #courseList li > h3, #sectionList  li > h2, #sectionList li > h3{
     display: inline;
     font-weight: 400;
     font-size: 25px;
     
 }
 
-#courseList > li > h3 {
+#courseList  li > h3, #sectionList  li > h3 {
     font-weight: 300;
 }
 
@@ -105,6 +118,10 @@ h1 {
     color: white;
 }
 
+#newSectionWeightInput {
+    width: 100px;
+}
+
 .newInput:focus {
     outline: none;
     border: 2px white solid;
@@ -116,9 +133,6 @@ h1 {
     font-size: 20px;
     text-align:center;
     padding: 5px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom: 2%;
     border: 2px solid white;
     border-radius: 10px;
 }
@@ -145,19 +159,66 @@ h1 {
 }
 
 
-#assignmentList{
+#sectionList{
     width:100%;
     list-style-type:none;
     padding:0;
 }
 
-#assignmentList  li #aName, #assignmentList  li #aPercent, #assignmentList  li #caPercent {
-    display: inline-block;
-    font-weight: 400;
-    font-size: 25px;
+.nameAndWeight, .sectionAverage {
+    display: inline-block !important;
+    margin: 0;
     width: 30%;
+    text-align: left
 }
 
-#assignmentList  li #aPercent, #assignmentList  li #caPercent {
-    text-align: center;
+.sectionAverage {
+    text-align: right;
 }
+
+/* animations for page transitions */
+
+@keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+@keyframes slideOutRight {
+    from    { transform:translateX(0); }
+    to      { transform: translateX(100%); }
+}
+
+@keyframes slideInLeft {
+    from    { transform: translateX(-100%); }
+    to      { transform: translateX(0); }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.ng-enter       { z-index: 8888; }
+.ng-leave       { z-index: 9999; }
+
+.page-list.ng-leave { animation: disappear 0.5s ease-in 0s 1 normal both;}
+.page-list.ng-enter { animation: appear 0.5s ease-in 0.5s 1 normal both;}
+
+.page-details.ng-leave { animation: disappear 0.5s ease-in 0s 1 normal both;}
+.page-details.ng-enter { animation: appear 0.5s ease-in 0.5s 1 normal both;}

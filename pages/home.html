@@ -1,11 +1,11 @@
 <h1>DayOne</h1>
 <ul id="courseList">
-    <hr /> 
-    <li ng-repeat="course in courses" ng-swipe-right="removeCourse($index)">
-        <h2> {{course.name}} </h2> <h3>({{course.average}}%)</h3>
-        <hr /> 
-    </li>
+    <a href="#courses/{{$index}}" ng-repeat="course in courses" ng-swipe-right="removeCourse($index)">
     <li>
+        <h2> {{course.name}} </h2> <h3>({{getCourseAverage(course)}}%)</h3>
+    </li>
+    </a>
+    <li class="noHighlight">
     	<form role="form" ng-submit="addCourse()">
         	<input ng-model="courseName" class="newInput" id="newCourseInput" type = "text" placeholder = "Add New Course" />
         	&nbsp;&nbsp;&nbsp;
