@@ -1,0 +1,15 @@
+<h1>DayOne</h1>
+<ul id="courseList">
+    <hr /> 
+    <li ng-repeat="course in courses">
+        <h2> {{course.name}} </h2> <h3>({{course.average}}%)</h3>
+        <hr /> 
+    </li>
+    <li>
+    	<form role="form" ng-submit="addCourse()">
+        	<input ng-model="courseName" class="newInput" id="newCourseInput" type = "text" placeholder = "Add New Course" />
+        	&nbsp;&nbsp;&nbsp;
+        	<input type="submit" class="minorButton" value="Add" />
+        </form>
+    </li>
+</ul>

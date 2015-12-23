@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+html {
+    background: linear-gradient(#363795, #005C97);
+    font-family: 'Josefin Sans', Helvetica, sans;
+    color: white;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 42pt;
+    text-align: center;
+}
+
+.minorButton {
+    display: inline-block;
+    font-size:25px;
+    font-family: 'Josefin Sans', Helvetica, sans;
+    color: white;
+    font-weight: 400;
+    padding: 7px;
+    border: 1px solid white ;
+    border-radius: 10px;
+    text-align:center;
+    background-color: transparent;
+}
+
+.minorButton:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #363795;
+}
+
+.minorButton:focus {
+    outline: none;
+}
+
+.majorButton{
+    display: block;
+    font-size:25px;
+    font-weight: 300;
+    width: 400px;
+    padding: 10px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid white ;
+    border-radius: 10px;
+    text-align:center;}
+
+
+.majorButton:hover {
+    cursor: pointer;
+    border: 2px solid black ;
+}
+
+#courseList {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+#courseList > li {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 0;
+    text-align: center;
+}
+
+#courseList > li > hr {
+    margin-top: 10px;
+}
+
+#courseList > li > h2, #courseList > li > h3 {
+    display: inline;
+    font-weight: 400;
+    font-size: 25px;
+    
+}
+
+#courseList > li > h3 {
+    font-weight: 300;
+}
+
+.newInput {
+    font-family: 'Josefin Sans', Helvetica, sans;
+    font-weight: 300;
+    font-size: 25px;
+    padding: 7px;
+    background-color: transparent;
+    border: 1px white solid;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+}
+
+.newInput:focus {
+    outline: none;
+    border: 2px white solid;
+}
+
+#currentGrade, #targetGrade {
+    display:block;
+    font-weight:400;
+    font-size: 20px;
+    text-align:center;
+    padding: 5px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 2%;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#currentGrade:hover, #targetGrade:hover{
+    border:2px solid black;
+    cursor:pointer;
+}
+
+
+#currentGrade{
+    width: 30%;
+    background-color:green;
+    float:left;
+    margin-left: 10%;
+    margin-right:10%;
+}
+
+#targetGrade{
+    width:30%;
+    float:right;
+    margin-left: 10%;
+    margin-right:10%;
+}
+
+
+#assignmentList{
+    width:100%;
+    list-style-type:none;
+    padding:0;
+}
+
+#assignmentList  li #aName, #assignmentList  li #aPercent, #assignmentList  li #caPercent {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 25px;
+    width: 30%;
+}
+
+#assignmentList  li #aPercent, #assignmentList  li #caPercent {
+    text-align: center;
+}
