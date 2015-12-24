@@ -84,7 +84,7 @@ html {
     color: white;
 }
 
-#courseList li:active, #courseList li:hover, #sectionList li:active, #sectionList li:hover   {
+#courseList li:hover,#courseList li:active, #sectionList li:hover,  #sectionList li:active  {
     cursor: pointer;
     background-color: white;
     color: #363795;
@@ -96,16 +96,28 @@ html {
     color: white;
 }
 
-#courseList  li > h2, #courseList li > h3, #sectionList  li > h2, #sectionList li > h3{
+#courseList  li > h2{
     display: inline;
     font-weight: 400;
     font-size: 50pt;
 }
 
-#courseList  li > h3, #sectionList  li > h3 {
+#courseList li > h3{
+	display: inline;
+    font-weight: 300;
+    font-size: 50pt;
+}
+
+#sectionList  li > h2{
+	display: inline;
+    font-weight: 400;
+    font-size: 45pt;
+}
+
+#sectionList li > h3{
+	display: inline;
     font-weight: 300;
     font-size: 45pt;
-    margin-left: 2px;
 }
 
 .newInput {
