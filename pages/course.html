@@ -1,29 +1,50 @@
-<ul class = "headerList">
-<li><a href = "#courses" class = "goBack"> <i class = "fa fa-home fa-lg"></i>  </a></li>
-<li><a class = "courseSettings"> <i class = "fa fa-cog fa-2x"></i> </a></li>
-</ul>
-<h1 class = "courseTitle">{{ course.name }}</h1>
-<div id = "switchView" href = "#"><i class="fa fa-arrows-h fa-lg"></i> Switch View <i class="fa fa-arrows-h fa-lg"></i> </div> 
-<div id = "currentGrade"> Current Grade: {{ getCourseAverage(course) }} </div>
+    <ul class = "headerList">
+        <li><a href = "#courses" class = "goBack"> <i class = "fa fa-home fa-lg"></i>  </a></li>
+        <li><a class = "courseSettings"> <i class = "fa fa-cog fa-2x"></i> </a></li>
+    </ul>
+    <h1 class = "courseTitle">{{ course.name }}</h1>
+    <div id = "switchView" href = "#"><i class="fa fa-arrows-h fa-lg"></i> Switch View <i class="fa fa-arrows-h fa-lg"></i> </div> 
+    <div id = "currentGrade"> Current Grade: {{ 100*getCourseAverage(course) }} </div>
 
-<div id = "targetGrade"> Target Grade: Click Here to Set </div>
-<br />
-<br />
-<br />
-<br />
-<ul id="sectionList">
-    <a ng-repeat="section in course.sections" ng-swipe-right="removeSection($index)">
-    <li>
-        <h2 class="nameAndWeight">&nbsp;&nbsp;&nbsp;{{section.name}} ({{section.weight}}%)</h2> <h3  class="sectionAverage">{{getSectionAverage(section)}}%</h3>
-    </li>
-    </a>
-    <li class="noHighlight">
-        <form role="form" ng-submit="addSection()">
-            <input ng-model="sectionName" class="newInput" id="newSectionNameInput" type = "text" placeholder = "Add New Section" />
-            &nbsp;&nbsp;&nbsp;
-            <input ng-model="sectionWeight" class="newInput" id="newSectionWeightInput" type = "text" placeholder = "Weight" />
-            &nbsp;&nbsp;&nbsp;
-            <input type="submit" class="minorButton" value="Add" />
-        </form>
-    </li>
-</ul>
+    <div id = "targetGrade"> Target Grade: Click Here to Set </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <ul id="sectionList">
+        <span ng-repeat="section in course.sections" >
+            <a ng-swipe-right="removeSection($index)">
+                <li>
+                    <h2 class="nameAndWeight">&nbsp;&nbsp;&nbsp;{{section.name}} ({{section.weight}}%)</h2> <h3  class="sectionAverage">{{100*getSectionAverage(section)}}%</h3>
+
+                </li>
+            </a>
+            <ul id="itemList">
+                <a ng-repeat="item in section.items">
+                    <li>
+                        {{item.name}} - {{100.0 * item.points / item.possiblePoints }}%
+                    </li>
+                </a>
+                <li class="noHighlight">
+                    <form role="form" ng-submit="addItem($index)">
+                        <input ng-model="itemName[$index]" class="newInput" id="newItemNameInput" type = "text" placeholder = "Add New Item" />
+                        &nbsp;&nbsp;&nbsp;
+                        <input ng-model="itemPoints[$index]"  class="newInput" id="newItemPointsInput" type = "text" placeholder = "Points" />
+                        /
+                        <input ng-model="itemPossiblePoints[$index]"  class="newInput" id="newItemPossiblePointsInput" type = "text" placeholder = "Possible Points" />
+                        &nbsp;&nbsp;&nbsp;
+                        <input type="submit" class="minorButton" value="Add" />
+                    </form>
+                </li>
+            </ul>
+        </span>
+        <li class="noHighlight">
+            <form role="form" ng-submit="addSection()">
+                <input ng-model="sectionName" class="newInput" id="newSectionNameInput" type = "text" placeholder = "Add New Section" />
+                &nbsp;&nbsp;&nbsp;
+                <input ng-model="sectionWeight" class="newInput" id="newSectionWeightInput" type = "text" placeholder = "Weight" />
+                &nbsp;&nbsp;&nbsp;
+                <input type="submit" class="minorButton" value="Add" />
+            </form>
+        </li>
+    </ul>

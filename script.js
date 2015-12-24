@@ -6,7 +6,7 @@ var getSectionAverage = function(section) {
 		poss += section.items[i].possiblePoints;
 	}
 	if(tot === 0) return 0; 
-	return poss / tot;
+	return tot / poss;
 }
 
 var getCourseAverage = function(course) {
@@ -80,7 +80,7 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 		if($scope.sectionName && $scope.sectionWeight) {
 			$scope.course.sections.push({
 				name: $scope.sectionName, 
-				weight: $scope.sectionWeight,
+				weight: parseFloat($scope.sectionWeight),
 				items: []
 			});
 			$scope.sectionName = '';
@@ -89,5 +89,22 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 	}
 	$scope.removeSection = function(i) {
 		$scope.course.sections.splice(i, 1);
+	}
+
+	$scope.itemName = {};
+	$scope.itemPoints = {};
+	$scope.itemPossiblePoints = {}
+	$scope.addItem = function(sectionIndex) {
+		//if($scope.itemName && $scope.itemGrade) {
+			console.log($scope.itemName)
+			$scope.course.sections[sectionIndex].items.push({
+				name: $scope.itemName[sectionIndex],
+				points: parseFloat($scope.itemPoints[sectionIndex]),
+				possiblePoints: parseFloat($scope.itemPossiblePoints[sectionIndex])
+			});
+			$scope.itemName = {};
+			$scope.itemPoints = {};
+			$scope.itemPossiblePoints = {}
+		//}
 	}
 }]);

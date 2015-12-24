@@ -118,7 +118,7 @@ h1 {
     color: white;
 }
 
-#newSectionWeightInput {
+#newSectionWeightInput, #newItemPossiblePointsInput, #newItemPointsInput {
     width: 100px;
 }
 
