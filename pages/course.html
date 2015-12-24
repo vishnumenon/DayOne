@@ -4,9 +4,9 @@
 </ul>
 <h1 class = "courseTitle">{{ course.name }}</h1>
 <div id = "switchView" href = "#"><i class="fa fa-arrows-h fa-lg"></i> Switch View <i class="fa fa-arrows-h fa-lg"></i> </div> 
-<div id = "currentGrade"> Current Grade: {{ 100*getCourseAverage(course) }} </div>
+<div id = "currentGrade"> Current Grade: {{ 100*getCourseAverage(course) | number : 2 }} </div>
 
-<div id = "targetGrade"> Target Grade: Click Here to Set </div>
+<div id = "targetGrade"> Target: Click To Set </div>
 <br />
 <br />
 <br />
@@ -15,14 +15,14 @@
     <span ng-repeat="section in course.sections" >
         <a ng-swipe-right="removeSection($index)">
             <li>
-                <h2 class="nameAndWeight">&nbsp;&nbsp;&nbsp;{{section.name}} ({{section.weight}}%)</h2> <h3  class="sectionAverage">{{100*getSectionAverage(section)}}%</h3>
+                <h2 class="nameAndWeight">&nbsp;&nbsp;&nbsp;{{section.name}} ({{section.weight}}%)</h2> <h3  class="sectionAverage">{{100*getSectionAverage(section) | number : 2}}%</h3>
 
             </li>
         </a>
         <ul id="itemList">
-            <a ng-repeat="item in section.items">
+            <a ng-repeat="item in section.items" ng-swipe-right="removeItem($parent.$index, $index)">
                 <li>
-                    {{item.name}} - {{100.0 * item.points / item.possiblePoints }}%
+                    {{item.name}} - {{item.points}}/{{item.possiblePoints}} ({{100.0 * item.points / item.possiblePoints | number : 2}}%)
                 </li>
             </a>
             <li class="noHighlight">

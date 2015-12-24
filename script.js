@@ -95,7 +95,7 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 	$scope.itemPoints = {};
 	$scope.itemPossiblePoints = {}
 	$scope.addItem = function(sectionIndex) {
-		//if($scope.itemName && $scope.itemGrade) {
+		if($scope.itemName[sectionIndex] && $scope.itemPoints[sectionIndex] && $scope.itemPossiblePoints[sectionIndex]) {
 			console.log($scope.itemName)
 			$scope.course.sections[sectionIndex].items.push({
 				name: $scope.itemName[sectionIndex],
@@ -105,6 +105,10 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 			$scope.itemName = {};
 			$scope.itemPoints = {};
 			$scope.itemPossiblePoints = {}
-		//}
+		}
+	}
+
+	$scope.removeItem = function(secIndex, i) {
+		$scope.course.sections[secIndex].items.splice(i,1);
 	}
 }]);

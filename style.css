@@ -133,6 +133,14 @@ html {
     margin-top: 2%;
 }
 
+#itemList .newInput {
+    font-size: 25pt;
+}
+
+#itemList li {
+    font-size: 30pt;
+}
+
 #newSectionWeightInput, #newItemPossiblePointsInput, #newItemPointsInput {
     width: 100px;
 }
@@ -208,9 +216,10 @@ html {
 }
 
 .nameAndWeight, .sectionAverage {
-    display: inline-block; !important
-    width: 30%;
+    display: inline-block !important;
+    width: 45%;
     text-align: left;
+    margin: 15px;
 }
 
 .sectionAverage {
