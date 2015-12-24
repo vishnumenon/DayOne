@@ -1,17 +1,16 @@
-<h1 style = "font-size: 150px;">DayOne</h1>
+<h1 class = "headerHome">DayOne</h1>
 
 <ul id="courseList">
-</li>
   <a href="#courses/{{$index}}" ng-repeat="course in courses" ng-swipe-right="removeCourse($index)">
     <li>
-        <h2 style = "font-size: 65px;"> {{course.name}} </h2> <h3 style = "font-size: 55px; margin-left: 2px;">({{getCourseAverage(course)}}%)</h3>
+        <h2> {{course.name}} </h2> <h3>({{getCourseAverage(course)}}%)</h3>
     </li>
     </a>
     <li class="noHighlight">
     	<form role="form" ng-submit="addCourse()">
-        	<input style = "font-size: 55px; margin-top: 5%; " ng-model="courseName" class="newInput" id="newCourseInput" type = "text" placeholder = "Add New Course" />
+        	<input ng-model="courseName" class="newInput" id="newCourseInput" type = "text" placeholder = "Add New Course" />
         	&nbsp;&nbsp;&nbsp;
-        	<input style = "font-size: 55px;" type="submit" class="minorButton" value="Add" />
+        	<input type="submit" class="minorButton" value="Add" />
         </form>
     </li>
 </ul>
