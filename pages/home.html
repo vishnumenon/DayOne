@@ -1,9 +1,8 @@
 <h1 class = "headerHome">DayOne</h1>
-
 <ul id="courseList">
   <a href="#courses/{{$index}}" ng-repeat="course in courses" ng-swipe-right="removeCourse($index)">
     <li>
-        <h2> {{course.name}} </h2> <h3>({{getCourseAverage(course)}}%)</h3>
+        <h2> {{course.name}} </h2> <h3>({{100*getCourseAverage(course) | number: 3}}%)</h3>
     </li>
     </a>
     <li class="noHighlight">

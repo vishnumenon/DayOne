@@ -45,6 +45,30 @@ html {
     outline: none;
 }
 
+.minorminorButton {
+    display: inline-block;
+    font-size:25pt;
+    font-family: 'Josefin Sans', Helvetica, sans;
+    color: white;
+    font-weight: 400;
+    padding: 7px;
+    border: 1px solid white ;
+    border-radius: 10px;
+    text-align:center;
+    background-color: transparent;
+}
+
+.minorminorButton:active, .minorminorButton:hover {
+    font-size: 30pt;
+    cursor: pointer;
+    background-color: white;
+    color: #363795;
+}
+
+.minorminorButton:focus {
+    outline: none;
+}
+
 .majorButton{
     display: block;
     font-size:25px;
@@ -96,6 +120,7 @@ html {
     color: white;
 }
 
+
 #courseList  li > h2{
     display: inline;
     font-weight: 400;
@@ -108,16 +133,24 @@ html {
     font-size: 50pt;
 }
 
+
 #sectionList  li > h2{
 	display: inline;
     font-weight: 400;
-    font-size: 45pt;
+    font-size: 38pt;
+    font-style: italic;
+
 }
 
 #sectionList li > h3{
 	display: inline;
     font-weight: 300;
-    font-size: 45pt;
+    font-size: 35pt;
+    font-style: italic;
+}
+
+.itemDisplay{
+	font-size: 25pt;
 }
 
 .newInput {
@@ -141,8 +174,13 @@ html {
     font-size: 30pt;
 }
 
-#newSectionWeightInput, #newItemPossiblePointsInput, #newItemPointsInput {
-    width: 100px;
+#newItemPossiblePointsInput, #newItemPointsInput {
+    width: 125px;
+    margin-bottom: 20px;
+}
+
+#newSectionWeightInput{
+	width: 200px;
 }
 
 .newInput:focus {
