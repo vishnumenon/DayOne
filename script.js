@@ -111,4 +111,8 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 	$scope.removeItem = function(secIndex, i) {
 		$scope.course.sections[secIndex].items.splice(i,1);
 	}
+
+	$scope.toggleItemList = function(secIndex) {
+		$("#sectionList > span:nth-child(" + (secIndex+1) + ") > ul#itemList").slideToggle();
+	} 
 }]);

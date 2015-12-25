@@ -170,6 +170,7 @@ html {
 
 #itemList {
     padding: 0;
+    display: none;
 }
 
 .itemNumber, .itemPercent {

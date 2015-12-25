@@ -10,7 +10,7 @@
 <div style="height: 60px;"></div>
 <ul id="sectionList">
     <span ng-repeat="section in course.sections" >
-        <a ng-swipe-right="removeSection($index)">
+        <a ng-swipe-right="removeSection($index)" ng-click="toggleItemList($index)">
             <li>
                 <p class="nameAndWeight">{{section.name}} ({{section.weight}}%)</p> <p  class="sectionAverage">{{100*getSectionAverage(section) | number : 2}}%</p>
             </li>
