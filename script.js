@@ -131,4 +131,9 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 	$scope.toggleItemList = function(secIndex) {
 		$("#sectionList > span:nth-child(" + (secIndex+1) + ") > ul#itemList").slideToggle();
 	} 
+
+	$scope.toggleGrade = function(){
+		$(".possibleGrade").toggle();
+	}
+
 }]);

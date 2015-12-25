@@ -4,7 +4,7 @@
 </ul>
 <h1 class = "courseTitle">{{ course.name }}</h1>
 <div id = "switchView" href = "#"><i class="fa fa-arrows-h fa-lg"></i> Switch View <i class="fa fa-arrows-h fa-lg"></i> </div> 
-<div id = "currentGrade"> Current Grade: {{ 100*getCourseAverage(course) | number : 2 }} </div>
+<div id = "currentGrade" ng-click="toggleGrade()"> <p class = "possibleGrade"> Total Grade: {{ 100*getCourseAverage(course) | number : 2 }}% </p> <p class = "possibleGrade" style = "display:none"> Running Grade: {{ 100*getRunningCourseAverage(course) | number : 2 }}% </p> </div>
 
 <div id = "targetGrade"> Target: Click To Set </div>
 <div style="height: 60px;"></div>
