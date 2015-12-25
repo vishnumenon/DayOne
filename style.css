@@ -163,6 +163,25 @@ html {
     margin-top: 2%;
 }
 
+.newAssignment {
+    width: 60%;
+    font-family: 'Josefin Sans', Helvetica, sans;
+    font-weight: 300;
+    font-size: 45pt;
+    padding: 7px;
+    text-indent: 72px;
+    background-color: transparent;
+    border: 1px white solid;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    margin-top: 2%;
+}
+
+option{
+    background-color:red;
+}
+
 #itemList .newInput {
     font-size: 32pt;
     text-align: center;

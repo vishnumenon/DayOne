@@ -11,10 +11,12 @@ var getSectionAverage = function(section) {
 
 var getCourseAverage = function(course) {
 	var acc = 0;
+	var totalsec = 0;
 	var sec;
 	for(var i = 0; i < course.sections.length; i++) {
 		sec = course.sections[i];
 		acc += getSectionAverage(sec) * (sec.weight / 100.0); 
+		totalsec +=sec.weight;
 	}
 	return acc;
 }
