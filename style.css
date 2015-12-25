@@ -237,7 +237,7 @@ option{
     display: inline;
 }
 
-#currentGrade, #targetGrade {
+ #currentGrade, #targetGrade {
     display:block;
     font-weight:400;
     font-size: 42px;
@@ -247,7 +247,7 @@ option{
     border-radius: 10px;
 }
 
-#currentGrade:hover, #targetGrade:hover{
+#currentHomeGrade, #currentGrade:hover, #targetGrade:hover{
     border:2px solid black;
     cursor:pointer;
 }
@@ -261,6 +261,24 @@ option{
     margin-right: 2%;
 }
 
+#currentHomeGrade{
+    display:block;
+    font-weight:400;
+    font-size: 40px;
+    text-align:center;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 72%;
+    margin-left: 14%;
+    margin-right: 14%;
+    margin-top: 30px;
+    background-color: green;
+}
+
+#currentHomeGrade p{
+    display: inline;
+}
 
 #switchView{  
 	display:block;
@@ -445,8 +463,8 @@ font-family: 'Josefin Sans', Helvetica, sans;
 .ng-enter       { z-index: 8888; }
 .ng-leave       { z-index: 9999; }
 
-.page-list.ng-leave { animation: disappear 0.5s ease-in 0s 1 normal both;}
-.page-list.ng-enter { animation: appear 0.5s ease-in 0.5s 1 normal both;}
+.page-list.ng-leave { animation: disappear 0.4s ease-in 0s 1 normal both;}
+.page-list.ng-enter { animation: appear 0.4s ease-in 0.4s 1 normal both;}
 
-.page-details.ng-leave { animation: disappear 0.5s ease-in 0s 1 normal both;}
-.page-details.ng-enter { animation: appear 0.5s ease-in 0.5s 1 normal both;}
+.page-details.ng-leave { animation: disappear 0.4s ease-in 0s 1 normal both;}
+.page-details.ng-enter { animation: appear 0.4s ease-in 0.4s 1 normal both;}

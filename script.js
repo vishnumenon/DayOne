@@ -61,12 +61,17 @@ dayOneApp.controller('courseListController', ['$scope', '$http', 'localStorageSe
 	$scope.pageClass = 'page-list';
 
 	$scope.getCourseAverage = getCourseAverage;
+	$scope.getRunningCourseAverage = getRunningCourseAverage;
 	var coursesInStore = localStorageService.get('courses');
 	$scope.courses = coursesInStore || [];
 	$scope.$watch('courses', function() {
 		localStorageService.set('courses', $scope.courses);
 	}, true);
 
+	$scope.toggleHomeGrades = function(){
+		$(".possibleHomeGrade").toggle();
+	}
+	
 	$scope.addCourse = function() {
 		if($scope.courseName) {
 			$scope.courses.push({
@@ -141,5 +146,4 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 	$scope.switchView = function(){
 		$(".viewMode").toggle();
 	}
-
 }]);

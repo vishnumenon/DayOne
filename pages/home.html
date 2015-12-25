@@ -2,7 +2,9 @@
 <ul id="courseList">
   <a href="#courses/{{$index}}" ng-repeat="course in courses" ng-swipe-right="removeCourse($index)">
     <li>
-        <h2> {{course.name}} </h2> <h3>({{100*getCourseAverage(course) | number: 3}}%)</h3>
+        <h2> {{course.name}} </h2> 
+        <h3 class = "possibleHomeGrade" style = "display:none;" >({{100*getCourseAverage(course) | number: 3}}%)</h3> 
+        <h3 class = "possibleHomeGrade" >({{100*getRunningCourseAverage(course) | number: 3}}%)</h3>
     </li>
     </a>
     <li class="noHighlight">
@@ -13,3 +15,5 @@
         </form>
     </li>
 </ul>
+
+<div id = "currentHomeGrade" ng-click="toggleHomeGrades()"> <p class = "possibleHomeGrade"> Running Grades (Click for Total Grades) </p> <p class = "possibleHomeGrade" style = "display:none"> Total Grades (Click for Running Grades) </p> </div>
