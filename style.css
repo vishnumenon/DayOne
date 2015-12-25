@@ -173,13 +173,13 @@ html {
     display: none;
 }
 
-.itemNumber, .itemPercent {
+.itemNumber , .itemPercent {
     display: inline-block !important;
     width: 70%;
     text-align: left;
     margin: 15px;
     color: black;
-    font-size: 32pt;
+    font-size: 34pt;
 }
 
 .itemNumber{
