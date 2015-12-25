@@ -383,7 +383,7 @@ font-family: 'Josefin Sans', Helvetica, sans;
 .ng-leave       { z-index: 9999; }
 
 .page-list.ng-leave { animation: disappear 0.5s ease-in 0s 1 normal both;}
-.page-list.ng-enter { animation: appear 0.5s ease-in 15s 1 normal both;}
+.page-list.ng-enter { animation: appear 0.5s ease-in 0.5s 1 normal both;}
 
-.page-details.ng-leave { animation: disappear 15s ease-in 0s 1 normal both;}
+.page-details.ng-leave { animation: disappear 0.5s ease-in 0s 1 normal both;}
 .page-details.ng-enter { animation: appear 0.5s ease-in 0.5s 1 normal both;}
