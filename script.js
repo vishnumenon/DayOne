@@ -19,7 +19,7 @@ var getCourseAverage = function(course) {
 	return acc;
 }
 
-var dayOneApp = angular.module('dayOneApp', ['ngRoute', 'ngTouch', 'LocalStorageModule']);// 'ngAnimate']);
+var dayOneApp = angular.module('dayOneApp', ['ngRoute', 'ngTouch', 'LocalStorageModule', 'ngAnimate']);
 
 dayOneApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider.

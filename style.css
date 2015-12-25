@@ -170,8 +170,8 @@ html {
     font-size: 25pt;
 }
 
-#itemList li {
-    font-size: 30pt;
+#itemList {
+    padding: 0;
 }
 
 #newItemPossiblePointsInput, #newItemPointsInput {
