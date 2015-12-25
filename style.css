@@ -169,8 +169,20 @@ html {
 
 #itemList {
     padding: 0;
-    font-size: 25pt;
 }
+
+.itemNumber, .itemPercent {
+    display: inline-block !important;
+    width: 45%;
+    text-align: left;
+    margin: 15px;
+    color: black;
+}
+
+.itemPercent{
+	text-align: right;
+}
+
 
 #newItemPossiblePointsInput, #newItemPointsInput {
     width: 125px;
@@ -253,12 +265,13 @@ html {
 
 .nameAndWeight, .sectionAverage {
     display: inline-block !important;
-    width: 45%;
+    width: 67%;
     text-align: left;
     margin: 15px;
 }
 
 .sectionAverage {
+	width:26%;
     text-align: right;
 }
 

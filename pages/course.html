@@ -12,13 +12,14 @@
     <span ng-repeat="section in course.sections" >
         <a ng-swipe-right="removeSection($index)">
             <li>
-                <h2 class="nameAndWeight">&nbsp;&nbsp;&nbsp;{{section.name}} ({{section.weight}}%)</h2> <h3  class="sectionAverage">{{100*getSectionAverage(section) | number : 2}}%</h3>
+                <h2 class="nameAndWeight">{{section.name}} ({{section.weight}}%)</h2> <h3  class="sectionAverage">{{100*getSectionAverage(section) | number : 2}}%</h3>
             </li>
         </a>
         <ul id="itemList">
             <a ng-repeat="item in section.items" ng-swipe-right="removeItem($parent.$index, $index)">
-                <li class = "itemDisplay">
-                    {{item.name}} - {{item.points}}/{{item.possiblePoints}} ({{100.0 * item.points / item.possiblePoints | number : 2}}%)
+                <li>
+                    <h2 class = "itemNumber">{{item.name}} - {{item.points}}/{{item.possiblePoints}} </h2>
+                    <h2 class = "itemPercent">({{100.0 * item.points / item.possiblePoints | number : 2}}%)</h2> 
                 </li>
             </a>
             <li class="noHighlight">
@@ -26,7 +27,7 @@
                     <input ng-model="itemName[$index]" class="newInput" id="newItemNameInput" type = "text" placeholder = "Add New Item" />
                     &nbsp;&nbsp;&nbsp;
                     <input ng-model="itemPoints[$index]"  class="newInput" id="newItemPointsInput" type = "text" placeholder = "Points" />
-                    /
+                    <span style = "font-size:38px">/</span>
                     <input ng-model="itemPossiblePoints[$index]"  class="newInput" id="newItemPossiblePointsInput" type = "text" placeholder = "Possible Points" />
                     &nbsp;&nbsp;&nbsp;
                     <input type="submit" class="minorminorButton" value="Add" />
