@@ -377,7 +377,7 @@ font-family: 'Josefin Sans', Helvetica, sans;
   to {
     opacity: 0;
   }
-}
+} 
 
 .ng-enter       { z-index: 8888; }
 .ng-leave       { z-index: 9999; }
