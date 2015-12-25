@@ -19,6 +19,21 @@ var getCourseAverage = function(course) {
 	return acc;
 }
 
+var getRunningCourseAverage = function(course) {
+	var acc = 0;
+	var totalsec = 0;
+	var sec;
+	for(var i = 0; i < course.sections.length; i++) {
+		sec = course.sections[i];
+		totalsec+=sec.weight;
+	}
+	for(var i = 0; i < course.sections.length; i++) {
+		sec = course.sections[i];
+		acc += getSectionAverage(sec) * (sec.weight / totalsec); 
+	}
+	return acc;
+}
+
 var dayOneApp = angular.module('dayOneApp', ['ngRoute', 'ngTouch', 'LocalStorageModule', 'ngAnimate']);
 
 dayOneApp.config(['$routeProvider', function($routeProvider){
@@ -69,6 +84,7 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 
 	$scope.getCourseAverage = getCourseAverage;
 	$scope.getSectionAverage = getSectionAverage;
+	$scope.getRunningCourseAverage = getRunningCourseAverage;
 	$scope.courses = localStorageService.get('courses');
 	$scope.course = $scope.courses[$routeParams.courseId];
 	$scope.$watch('courses', function() {
