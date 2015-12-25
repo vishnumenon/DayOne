@@ -7,10 +7,7 @@
 <div id = "currentGrade"> Current Grade: {{ 100*getCourseAverage(course) | number : 2 }} </div>
 
 <div id = "targetGrade"> Target: Click To Set </div>
-<br />
-<br />
-<br />
-<br />
+<div style="height: 60px;"></div>
 <ul id="sectionList">
     <span ng-repeat="section in course.sections" >
         <a ng-swipe-right="removeSection($index)">
