@@ -227,6 +227,7 @@ option{
 }
 
 .courseTitle{
+    margin-top: 20pt;
 	font-weight: 300;
     font-size: 100pt;
     text-align: center;
@@ -340,9 +341,12 @@ font-family: 'Josefin Sans', Helvetica, sans;
     width: 200px;
 }
 
-.headerList li{display:inline;}
+.headerList li{
+    display:inline;
+}
 
 .goBack{
+    display: inline;
 	z-index:5; 
 	height: 100px; 
 	width: 100px;
@@ -363,12 +367,22 @@ font-family: 'Josefin Sans', Helvetica, sans;
      text-align:center;
  }
 
+.viewMode{
+    margin-top: 100px;
+    display: inline;
+    font-size: 60px;
+    clear:both;
+    text-align: center;
+    margin-left: 21%;
+}
+
 .goBack:active,.goBack:hover,.courseSettings:active,.courseSettings:hover,#switchView:active, #switchView:hover {cursor: pointer;
     background-color: white;
     color: #363795;
 }
 
 .courseSettings{
+    display: inline;
 	z-index:5;
 	float:right; 
 	display: inline-block;

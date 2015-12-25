@@ -138,4 +138,8 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 		$(".possibleGrade").toggle();
 	}
 
+	$scope.switchView = function(){
+		$(".viewMode").toggle();
+	}
+
 }]);

@@ -1,9 +1,11 @@
 <ul class = "headerList">
     <li><a href = "#courses" class = "goBack"> <i class = "fa fa-home fa-3x"></i>  </a></li>
+    <li class = "viewMode"> Actual Grade <li>
+    <li class = "viewMode" style ="display:none; margin-left:16%; font-style:italic;"> Predictive Grade </li> 
     <li><a class = "courseSettings"> <i class = "fa fa-cog fa-4x"></i> </a></li>
 </ul>
 <h1 class = "courseTitle">{{ course.name }}</h1>
-<div id = "switchView" href = "#"><i class="fa fa-arrows-h fa-lg"></i> Switch View <i class="fa fa-arrows-h fa-lg"></i> </div> 
+<div id = "switchView" href = "#" ng-click="switchView()"><i class="fa fa-arrows-h fa-lg"></i> Switch View <i class="fa fa-arrows-h fa-lg"></i> </div> 
 <div id = "currentGrade" ng-click="toggleGrade()"> <p class = "possibleGrade"> Total Grade: {{ 100*getCourseAverage(course) | number : 2 }}% </p> <p class = "possibleGrade" style = "display:none"> Running Grade: {{ 100*getRunningCourseAverage(course) | number : 2 }}% </p> </div>
 
 <div id = "targetGrade"> Target: Click To Set </div>
