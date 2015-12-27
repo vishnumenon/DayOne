@@ -197,8 +197,12 @@ option{
     width: 70%;
     text-align: left;
     margin: 15px;
-    color: black;
+ /*   color: black; */
     font-size: 34pt;
+}
+
+.fa-plus-square, .fa-minus-square {
+    cursor: pointer;
 }
 
 .itemNumber{

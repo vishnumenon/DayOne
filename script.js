@@ -89,11 +89,13 @@ dayOneApp.controller('courseListController', ['$scope', '$http', 'localStorageSe
 dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'localStorageService', function($scope, $routeParams, localStorageService) {
 	$scope.pageClass = 'page-details';
 
+	$scope.predictive = false;
 	$scope.getCourseAverage = getCourseAverage;
 	$scope.getSectionAverage = getSectionAverage;
 	$scope.getRunningCourseAverage = getRunningCourseAverage;
 	$scope.courses = localStorageService.get('courses');
 	$scope.course = $scope.courses[$routeParams.courseId];
+
 	$scope.$watch('courses', function() {
 		localStorageService.set('courses', $scope.courses);
 	}, true);
@@ -145,5 +147,11 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 
 	$scope.switchView = function(){
 		$(".viewMode").toggle();
+		$scope.predictive = !($scope.predictive);
+		$scope.course = $scope.predictive ? jQuery.extend(true, {}, $scope.courses[$routeParams.courseId]) : $scope.courses[$routeParams.courseId];
+	}
+
+	$scope.changePoints = function(secIndex, i, val) {
+		$scope.course.sections[secIndex].items[i].points += val;
 	}
 }]);

@@ -14,13 +14,13 @@
     <span ng-repeat="section in course.sections" >
         <a ng-swipe-right="removeSection($index)" ng-click="toggleItemList($index)">
             <li>
-                <p class="nameAndWeight">{{section.name}} ({{section.weight}}%)</p> <p  class="sectionAverage">{{100*getSectionAverage(section) | number : 2}}%</p>
+                <p class="nameAndWeight">{{section.name}} ({{section.weight}}%)</p> <p class="sectionAverage">{{100*getSectionAverage(section) | number : 2}}%</p>
             </li>
         </a>
         <ul id="itemList">
             <a ng-repeat="item in section.items" ng-swipe-right="removeItem($parent.$index, $index)">
                 <li>
-                    <p class = "itemNumber">{{item.name}} - {{item.points}}/{{item.possiblePoints}} </p>
+                    <p class = "itemNumber">{{item.name}} - <span ng-if="predictive" ng-click="changePoints($parent.$index, $index, -1)" class="fa fa-minus-square"></span> {{item.points}}/{{item.possiblePoints}} <span ng-if="predictive" ng-click="changePoints($parent.$index, $index, 1)" class="fa fa-plus-square"></span></p>
                     <p class = "itemPercent">({{100.0 * item.points / item.possiblePoints | number : 2}}%)</p> 
                 </li>
             </a>
