@@ -149,6 +149,10 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 		$(".possibleGrade").toggle();
 	}
 
+	$scope.toggleSectionDelete = function(){
+		$("#sectionList li p").toggle();
+	}
+
 	$scope.switchView = function(){
 		$(".viewMode").toggle();
 		$scope.predictive = !($scope.predictive);

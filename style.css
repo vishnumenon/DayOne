@@ -163,6 +163,13 @@ html {
     font-style: italic;
 }
 
+.deleteSection{
+    display: inline-block;
+    font-size: 52px !important;
+    text-align: left;
+    margin: 15px;
+    font-style: italic;
+}
 
 .newInput {
     font-family: 'Josefin Sans', Helvetica, sans;
@@ -333,7 +340,7 @@ option{
 }
 
 .nameAndWeight, .sectionAverage {
-    display: inline-block !important;
+    display: inline-block;
     width: 65%;
     text-align: left;
     margin: 15px;

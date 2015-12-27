@@ -12,10 +12,10 @@
 <div style="height: 60px;"></div>
 <ul id="sectionList">
     <span ng-repeat="section in course.sections" >
-        <a ng-swipe-right="removeSection($index)" ng-click="toggleItemList($index)">
+        <a ng-swipe-right="toggleSectionDelete()" ng-click="toggleItemList($index)">
             <li>
                 <p class="nameAndWeight">{{section.name}} ({{section.weight}}%)</p> <p class="sectionAverage">{{100*getSectionAverage(section) | number : 2}}%</p>
-                
+                <p class = "deleteSection" style = "display:none;"> Delete This Section? </p> <p class = "deleteSection" ng-click = "removeSection($index)" style = "display:none;"> Yes </p> <p class = "deleteSection" ng-click = "toggleSectionDelete()" style = "display:none;"> No </p>
             </li>
         </a>
         <ul id="itemList">
