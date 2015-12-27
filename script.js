@@ -72,8 +72,8 @@ dayOneApp.controller('courseListController', ['$scope', '$http', 'localStorageSe
 		$(".possibleHomeGrade").toggle();
 	}
 	
-	$scope.toggleDelete = function(){
-		$(".courseStatus").toggle();
+	$scope.toggleDelete = function(i){
+		$("#courseList > a:nth-child(" + (i+1) + ") .courseStatus").toggle();
 	}
 
 	$scope.addCourse = function() {
