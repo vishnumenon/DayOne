@@ -152,6 +152,7 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 	}
 
 	$scope.changePoints = function(secIndex, i, val) {
+		console.log(secIndex + ":" + i);
 		$scope.course.sections[secIndex].items[i].points += val;
 	}
 }]);
