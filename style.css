@@ -16,10 +16,24 @@ html {
     color: white;
 }
 
-.headerHome {
+.headerHome li h1{
     font-weight: 300;
     font-size: 120pt;
     text-align: center;
+    margin-left: 115px;
+}
+
+.headerHome li{
+    display: inline;
+}
+
+.headerHome .courseSettings{
+    margin-top: -80px;
+    padding-top: -15px;
+}
+
+.courseStatus p{
+    display: inline;
 }
 
 .minorButton,.goBack {

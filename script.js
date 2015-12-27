@@ -72,6 +72,10 @@ dayOneApp.controller('courseListController', ['$scope', '$http', 'localStorageSe
 		$(".possibleHomeGrade").toggle();
 	}
 	
+	$scope.toggleDelete = function(){
+		$(".courseStatus").toggle();
+	}
+
 	$scope.addCourse = function() {
 		if($scope.courseName) {
 			$scope.courses.push({
@@ -156,3 +160,4 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 		$scope.course.sections[secIndex].items[i].points += val;
 	}
 }]);
+
