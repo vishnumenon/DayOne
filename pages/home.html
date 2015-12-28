@@ -6,7 +6,7 @@
   <a href="#courses/{{$index}}" ng-repeat="course in courses" ng-swipe-right="toggleDelete($index)">
     <li>
         <h2 class = "courseStatus"> {{course.name}} </h2> 
-        <h2 class = "courseStatus" style = "display: none;"> Delete This Course? <p ng-click = "removeCourse($index)" style = " background-color: red;"> Yes</p> <p ng-click ="toggleDelete($index)"> No </p> </h2>
+        <h2 class = "courseStatus" style = "display: none;"> Delete This Course? &nbsp;&nbsp; <p ng-click = "removeCourse($index)" style = "background-color: red; text-align:center; border: 2px solid white; border-radius: 10px; padding-left: 10px; padding-right: 10px"> Yes</p> &nbsp;&nbsp;<p ng-click ="toggleDelete($index)" style = "text-align:center; border: 2px solid white; border-radius: 10px; padding-right: 10px;"> No </p> </h2>
         <h3 class = "possibleHomeGrade" style = "display:none;" >({{100*getCourseAverage(course) | number: 3}}%)</h3> 
         <h3 class = "possibleHomeGrade" >({{100*getRunningCourseAverage(course) | number: 3}}%)</h3>
     </li>
