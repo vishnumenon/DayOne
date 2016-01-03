@@ -14,7 +14,7 @@
         <a ng-swipe-right="toggleSectionDelete($index)" ng-click="toggleItemList($index)">
             <li>
                 <p class="nameAndWeight">{{section.name}} ({{section.weight}}%)</p> <p class="sectionAverage">{{100*getSectionAverage(section) | number : 2}}%</p>
-                <p class = "deleteSection" style = "display:none;"> Delete This Section? </p> <p class = "deleteSection" ng-click = "removeSection($index)" style = "background-color: red; text-align:center; border: 2px solid white; border-radius: 10px; padding-left: 10px; padding-right: 15px; display:none;"> Yes </p> <p class = "deleteSection" ng-click = "toggleSectionDelete()" style = "text-align:center; border: 2px solid white; border-radius: 10px; padding-right: 10px; display:none;"> No </p>
+                <p class = "deleteSection" style = "display:none;"> Delete This Section? </p> <p class = "deleteSection" ng-click = "removeSection($index)" style = "background-color: red; text-align:center; border: 2px solid white; border-radius: 10px; padding-left: 10px; padding-right: 15px; display:none;"> Yes </p> <p class = "deleteSection" ng-click = "toggleSectionDelete($index)" style = "text-align:center; border: 2px solid white; border-radius: 10px; padding-right: 10px; display:none;"> No </p>
             </li>
         </a>
         <ul id="itemList">
@@ -22,7 +22,7 @@
                 <li>
                     <p class = "itemNumber">{{item.name}} - <span ng-if="predictive" ng-click="changePoints($parent.$parent.$index, $index, -1)" class="fa fa-minus-square"></span> {{item.points}}/{{item.possiblePoints}} <span ng-if="predictive" ng-click="changePoints($parent.$parent.$index, $index, 1)" class="fa fa-plus-square"></span></p>
                     <p class = "itemPercent">({{100.0 * item.points / item.possiblePoints | number : 2}}%)</p> 
-                     <p class = "deleteSection" style = "display:none;"> Delete This Section? </p> <p class = "deleteSection" ng-click = "removeItem($parent.$index, $index)" style = "background-color: red; text-align:center; border: 2px solid white; border-radius: 10px; padding-left: 10px; padding-right: 15px; display:none;"> Yes </p> <p class = "deleteSection" ng-click = "toggleMiniDelete()" style = "text-align:center; border: 2px solid white; border-radius: 10px; padding-right: 10px; display:none;"> No </p>
+                     <p class = "deleteSection" style = "display:none;"> Delete This Section? </p> <p class = "deleteSection" ng-click = "removeItem($parent.$index, $index)" style = "background-color: red; text-align:center; border: 2px solid white; border-radius: 10px; padding-left: 10px; padding-right: 15px; display:none;"> Yes </p> <p class = "deleteSection" ng-click = "toggleItemDelete($parent.$index, $index)" style = "text-align:center; border: 2px solid white; border-radius: 10px; padding-right: 10px; display:none;"> No </p>
 
                 </li>
             </a>

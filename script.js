@@ -150,7 +150,7 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 	}
 
 	$scope.toggleSectionDelete = function(i){
-		$("#sectionList > span:nth-child(" + (i+1) + ") li p").toggle();
+		$("#sectionList > span:nth-child(" + (i+1) + ") > a > li p").toggle();
 	}
 
 	$scope.toggleItemDelete = function(pi,i){
