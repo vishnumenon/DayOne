@@ -1,5 +1,5 @@
 <ul class = "headerHome">
-<li><a class = "courseSettings"><i class="fa fa-question fa-4x"></i></a></li>
+<li><a href="#helpModal" class = "courseSettings"><i class="fa fa-question fa-4x"></i></a></li>
 <li><h1>DayOne</h1> </li>
 </ul>
 <ul id="courseList">
@@ -21,3 +21,14 @@
 </ul>
 
 <div id = "currentHomeGrade" ng-click="toggleHomeGrades()"> <p class = "possibleHomeGrade"> Running Grades (Click for Total Grades) </p> <p class = "possibleHomeGrade" style = "display:none"> Total Grades (Click for Running Grades) </p> </div>
+
+<div class="remodal" data-remodal-id="helpModal">
+  <button data-remodal-action="close" class="remodal-close"></button>
+  <h1>Help/FAQ<h1>
+  <p>
+    BRIAN PUT YO FAQ STUFF HERE
+  </p>
+  <br>
+  <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+  <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+</div>
