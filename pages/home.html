@@ -1,5 +1,6 @@
+<span class="remodal-bg">
 <ul class = "headerHome">
-<li><a href="#helpModal" class = "courseSettings"><i class="fa fa-question fa-4x"></i></a></li>
+<li><a ng-click="helpModal.open()" class = "courseSettings"><i class="fa fa-question fa-4x"></i></a></li>
 <li><h1>DayOne</h1> </li>
 </ul>
 <ul id="courseList">
@@ -21,8 +22,8 @@
 </ul>
 
 <div id = "currentHomeGrade" ng-click="toggleHomeGrades()"> <p class = "possibleHomeGrade"> Running Grades (Click for Total Grades) </p> <p class = "possibleHomeGrade" style = "display:none"> Total Grades (Click for Running Grades) </p> </div>
-
-<div class="remodal" data-remodal-id="helpModal">
+</span>
+<div data-remodal-id="helpModal" data-remodal-options="hashTracking: false">
   <button data-remodal-action="close" class="remodal-close"></button>
   <h1>Help/FAQ<h1>
   <p>

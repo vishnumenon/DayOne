@@ -58,6 +58,7 @@ dayOneApp.config(['localStorageServiceProvider', function(localStorageServicePro
 }]);
 
 dayOneApp.controller('courseListController', ['$scope', '$http', 'localStorageService', function($scope, $http, localStorageService) {
+	$scope.helpModal = $('[data-remodal-id=helpModal]').remodal();
 	$scope.pageClass = 'page-list';
 
 	$scope.getCourseAverage = getCourseAverage;
