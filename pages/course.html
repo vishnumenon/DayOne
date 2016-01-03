@@ -6,8 +6,6 @@
 <h1 class = "courseTitle">{{ course.name }}</h1>
 <div id = "switchView" href = "#" ng-click="switchView()"><i class="fa fa-arrows-h fa-lg"></i> Switch View <i class="fa fa-arrows-h fa-lg"></i> </div> 
 <div id = "currentGrade" ng-click="toggleGrade()"> <p class = "possibleGrade" style = "display:none"> Total Grade: {{ 100*getCourseAverage(course) | number : 2 }}% </p> <p class = "possibleGrade" > Running Grade: {{ 100*getRunningCourseAverage(course) | number : 2 }}% </p> </div>
-
-<div id = "targetGrade" ng-click="targetModal.open()"> Target Grade: <span ng-if="!(targetGrade)">Click To Set</span>{{targetGrade}} </div>
 <div style="height: 60px;"></div>
 <ul id="sectionList">
     <span ng-repeat="section in course.sections" >
