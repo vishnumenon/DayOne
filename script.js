@@ -149,13 +149,14 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 		$(".possibleGrade").toggle();
 	}
 
-	$scope.toggleSectionDelete = function(){
-		$("#sectionList li p").toggle();
+	$scope.toggleSectionDelete = function(i){
+		$("#sectionList > span:nth-child(" + (i+1) + ") li p").toggle();
 	}
 
-	$scope.toggleMiniDelete = function(){
-		$("#itemList li p").toggle();
+	$scope.toggleItemDelete = function(pi,i){
+		$("#sectionList > span:nth-child(" + (pi+1) + ") #itemList > a:nth-child(" + (i+1) + ") p").toggle();
 	}
+
 
 	$scope.switchView = function(){
 		$(".viewMode").toggle();
