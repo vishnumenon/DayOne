@@ -256,6 +256,7 @@ option{
 	font-weight: 300;
     font-size: 100pt;
     text-align: center;
+    margin-right: 125px;
 }
 
 .possibleGrade{
