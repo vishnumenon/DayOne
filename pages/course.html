@@ -7,7 +7,7 @@
 <div id = "switchView" href = "#" ng-click="switchView()"><i class="fa fa-arrows-h fa-lg"></i> Switch View <i class="fa fa-arrows-h fa-lg"></i> </div> 
 <div id = "currentGrade" ng-click="toggleGrade()"> <p class = "possibleGrade" style = "display:none"> Total Grade: {{ 100*getCourseAverage(course) | number : 2 }}% </p> <p class = "possibleGrade" > Running Grade: {{ 100*getRunningCourseAverage(course) | number : 2 }}% </p> </div>
 
-<div id = "targetGrade"> Target Grade: Click To Set </div>
+<div id = "targetGrade" ng-click="targetModal.open()"> Target Grade: <span ng-if="!(targetGrade)">Click To Set</span>{{targetGrade}} </div>
 <div style="height: 60px;"></div>
 <ul id="sectionList">
     <span ng-repeat="section in course.sections" >
@@ -43,18 +43,18 @@
         <form role="form" ng-submit="addSection()">
             <input ng-model="sectionName" class="newAssignment" id="newSectionNameInput" type = "text" placeholder = "Add New Section" list = "browsers" />
             <datalist id = "browsers">
-                <option value = "Assignments">
-                <option value = "Discussion">
-                <option value = "Extra Credit">
-                <option value = "Final">
-                <option value = "Homework">
-                <option value = "Labs">
-                <option value = "Midterms">
-                <option value = "Papers">
-                <option value = "Participation">
-                <option value = "Quizzes">
-                <option value = "Tests">
-                <option value = "Other">
+                <option value = "Assignments" />
+                <option value = "Discussion" />
+                <option value = "Extra Credit" />
+                <option value = "Final" />
+                <option value = "Homework" />
+                <option value = "Labs" />
+                <option value = "Midterms" />
+                <option value = "Papers" />
+                <option value = "Participation" />
+                <option value = "Quizzes" />
+                <option value = "Tests" />
+                <option value = "Other" />
             </datalist>
             &nbsp;&nbsp;&nbsp;
             <input ng-model="sectionWeight" class="newInput" id="newSectionWeightInput" type = "text" placeholder = "Weight" />
@@ -63,4 +63,3 @@
         </form>
     </li>
 </ul>
-

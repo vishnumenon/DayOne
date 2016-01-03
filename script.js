@@ -105,7 +105,6 @@ dayOneApp.controller('courseDetailController', ['$scope', '$routeParams', 'local
 		localStorageService.set('courses', $scope.courses);
 	}, true);
 
-
 	$scope.addSection = function() {
 		if($scope.sectionName && $scope.sectionWeight) {
 			$scope.course.sections.push({

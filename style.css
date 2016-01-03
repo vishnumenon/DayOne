@@ -184,6 +184,20 @@ html {
     margin-top: 2%;
 }
 
+
+.invertedInput {
+    font-family: 'Josefin Sans', Helvetica, sans;
+    font-weight: 300;
+    font-size: 45pt;
+    padding: 7px;
+    background-color: transparent;
+    border: 1px black solid;
+    text-align: center;
+    border-radius: 10px;
+    color: black;
+    margin-top: 2%;
+}
+
 .newAssignment {
     width: 60%;
     font-family: 'Josefin Sans', Helvetica, sans;
