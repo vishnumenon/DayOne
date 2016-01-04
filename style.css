@@ -19,14 +19,15 @@ html {
 .headerHome {
     margin-left: 0;
     padding-left: 0;
-}
+    }
 
 .headerHome li h1{
     font-weight: 300;
-    font-size: 24pt;
+    font-size: 50pt;
     text-align: center;
     margin-left: 0;
     padding-left: 0;
+    margin-bottom: 20px;
 }
 
 .headerHome li{
@@ -123,6 +124,11 @@ html {
     text-align: center;
 }
 
+#courseList li{
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
 #courseList a, #sectionList a {
     text-decoration: none;
     color: white;
@@ -144,13 +150,13 @@ html {
 #courseList  li > h2{
     display: inline;
     font-weight: 400;
-    font-size: 16pt;
+    font-size: 20pt;
 }
 
 #courseList li > h3{
 	display: inline;
     font-weight: 300;
-    font-size: 16pt;
+    font-size: 18pt;
 }
 
 
@@ -171,23 +177,10 @@ html {
 
 .deleteSection{
     display: inline-block;
-    font-size: 16px !important;
+    font-size: 20px !important;
     text-align: left;
     margin: 15px;
     font-style: italic;
-}
-
-.newInput {
-    font-family: 'Josefin Sans', Helvetica, sans;
-    font-weight: 300;
-    font-size: 16pt;
-    padding: 7px;
-    background-color: transparent;
-    border: 1px white solid;
-    text-align: center;
-    border-radius: 10px;
-    color: white;
-    margin-top: 2%;
 }
 
 
@@ -205,18 +198,32 @@ html {
 }
 
 .newAssignment {
-    width: 60%;
+    width: 50%;
     font-family: 'Josefin Sans', Helvetica, sans;
     font-weight: 300;
-    font-size: 14pt;
+    font-size: 16pt;
     padding: 7px;
-    text-indent: 72px;
+    padding-left: 10%;
     background-color: transparent;
     border: 1px white solid;
     text-align: center;
     border-radius: 10px;
     color: white;
     margin-top: 2%;
+}
+
+.newInput{
+    font-family: 'Josefin Sans', Helvetica, sans;
+    font-weight: 300;
+    font-size: 16pt;
+    padding: 7px;
+    background-color: transparent;
+    border: 1px white solid;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    margin-top: 2%;
+    width: 70%;
 }
 
 option{
@@ -263,7 +270,8 @@ option{
 }
 
 #newSectionWeightInput{
-	width: 200px;
+	width: 21%;
+    
 }
 
 .newInput:focus {
@@ -272,9 +280,9 @@ option{
 }
 
 .courseTitle{
-    margin-top: 20pt;
+    margin-top: 25pt;
 	font-weight: 300;
-    font-size: 20pt;
+    font-size: 45pt;
     text-align: center;
 }
 
@@ -288,12 +296,12 @@ option{
     font-size: 16px;
     text-align:center;
     padding: 5px;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 10px;
 }
 
 #currentHomeGrade, #currentGrade:hover, #targetGrade:hover{
-    border:2px solid black;
+    border:1px solid black;
     cursor:pointer;
 }
 
@@ -311,13 +319,13 @@ option{
     font-weight:400;
     font-size: 16px;
     text-align:center;
-    padding: 10px;
-    border: 2px solid white;
-    border-radius: 10px;
-    width: 72%;
-    margin-left: 14%;
-    margin-right: 14%;
-    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: -30px;
     background-color: green;
 }
 
@@ -328,16 +336,16 @@ option{
 #switchView{  
 	display:block;
     font-weight:400;
-    font-size: 16px;
+    font-size: 18px;
     text-align:center;
     padding: 5px;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 10px;
-	width:60%;
+	width:65%;
  	margin-left: 20%;
     margin-right:20%; 
     margin-bottom: 5%; 
-    margin-top: -5%;
+    margin-top: -10%;
 }
 
 #switchView{  
@@ -377,7 +385,7 @@ option{
 }
 
 .sectionInput{
-font-family: 'Josefin Sans', Helvetica, sans;
+    font-family: 'Josefin Sans', Helvetica, sans;
     font-weight: 300;
     font-size: 16pt;
     padding: 7px;
@@ -403,15 +411,14 @@ font-family: 'Josefin Sans', Helvetica, sans;
     width: 200px;
 }
 
+#newItemNameInput{
+    width:50%;
+    font-size: 90px;
+}
+
 .headerList li{
     display:inline;
 }
-
-.goBack{
-    position: absolute;
-    top: 10px;
-    left: 10px;
- }
 
 .viewMode{
     position: absolute;
