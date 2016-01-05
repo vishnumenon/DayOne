@@ -120,6 +120,10 @@ html {
     margin-bottom: 50px;
 }
 
+#sectionList {
+    margin-top: 5px;
+}
+
 #courseList li, #sectionList li {
     display: block;
     width: 100%;
@@ -150,6 +154,10 @@ html {
     color: white;
 }
 
+.noHighlight {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
 
 #courseList  li > h2{
     display: inline;
@@ -235,6 +243,7 @@ option{
 }
 
 #itemList .newInput {
+    width: 30%;
     font-size: 14pt;
     text-align: center;
 }
@@ -245,12 +254,9 @@ option{
 }
 
 .itemNumber , .itemPercent {
-    display: inline-block;
-    width: 60%;
-    text-align: left;
-    margin: 2px;
- /*   color: black; */
     font-size: 14pt;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 .fa-plus-square, .fa-minus-square {
@@ -258,23 +264,27 @@ option{
 }
 
 .itemNumber{
-    margin-left: 40px;
+    float: left;
 }
 
 .itemPercent{
-	text-align: right;
-    width:20%;
+	float: right;
 }
 
 
 #newItemPossiblePointsInput, #newItemPointsInput {
-    width: 10%;
+    width: 17% !important;
     margin-bottom: 20px;
     text-align: center;
 }
 
 #newSectionWeightInput{
-	width: 21%;
+	width: 30%;
+    
+}
+
+#newSectionNameInput{
+    width: 40%;
     
 }
 
@@ -358,34 +368,35 @@ option{
     margin-right:25%; margin-bottom: 3%;
 }
 
-#targetGrade{
-    width:47%;
-    float:right;
-    margin-left: 2%;
-    margin-right:1%;
-}
-
 #sectionList{
     width:100%;
     list-style-type:none;
     padding:0;
 }
 
+#sectionList li{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#itemList li{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 .nameAndWeight, .sectionAverage {
-    display: inline-block;
-    text-align: left;
-    margin: 5px;
     font-style: italic;
+    font-size: 18px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 .nameAndWeight{
-    font-size: 18px;
+    float: left;
 }
 
 .sectionAverage {
-    font-size: 18px;
-	width:26%;
-    text-align: right;
+    float: right;
 }
 
 .sectionInput{
@@ -416,7 +427,7 @@ option{
 }
 
 #newItemNameInput{
-    width:50%;
+    width:40%;
     font-size: 90px;
 }
 

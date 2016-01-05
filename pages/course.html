@@ -7,12 +7,15 @@
 <div id = "switchView" href = "#" ng-click="switchView()"><i class="fa fa-arrows-h fa-lg"></i> Switch View <i class="fa fa-arrows-h fa-lg"></i> </div> 
 <div id = "currentGrade" ng-click="toggleGrade()"> <p class = "possibleGrade" style = "display:none"> Total Grade: {{ 100*getCourseAverage(course) | number : 2 }}% </p> <p class = "possibleGrade" > Running Grade: {{ 100*getRunningCourseAverage(course) | number : 2 }}% </p> </div>
 <div style="height: 40px;"></div>
+    <div style="margin-left: 10px; font-size: 18px;">Sections:</div>
+
 <ul id="sectionList">
     <span ng-repeat="section in course.sections" >
         <a ng-swipe-right="toggleSectionDelete($index)" ng-click="toggleItemList($index)">
             <li>
                 <p class="nameAndWeight">{{section.name}} ({{section.weight}}%)</p> <p class="sectionAverage">{{100*getSectionAverage(section) | number : 2}}%</p>
                 <p class = "deleteSection" style = "display:none; font-size: 20px;"> Delete This Section? </p> <p class = "deleteSection" ng-click = "removeSection($index)" style = "background-color: red; font-size:20px; text-align:center; border: 1px solid white; border-radius: 10px; padding-left: 10px; padding-right: 15px; display:none;"> Yes </p> <p class = "deleteSection" ng-click = "toggleSectionDelete($index)" style = "text-align:center; border: 1px solid white; border-radius: 10px; font-size:20px; display:none; padding: 2px;"> No </p>
+                <div style="clear: both;"></div>
             </li>
         </a>
         <ul id="itemList">
@@ -21,16 +24,16 @@
                     <p class = "itemNumber">{{item.name}} - <span ng-if="predictive" ng-click="changePoints($parent.$parent.$index, $index, -1)" class="fa fa-minus-square"></span> {{item.points}}/{{item.possiblePoints}} <span ng-if="predictive" ng-click="changePoints($parent.$parent.$index, $index, 1)" class="fa fa-plus-square"></span></p>
                     <p class = "itemPercent">({{100.0 * item.points / item.possiblePoints | number : 2}}%)</p> 
                      <p class = "deleteSection" style = "display:none;"> Delete This Section? </p> <p class = "deleteSection" ng-click = "removeItem($parent.$index, $index)" style = "background-color: red; text-align:center; border: 2px solid white; border-radius: 10px; padding-left: 10px; padding-right: 15px; display:none;"> Yes </p> <p class = "deleteSection" ng-click = "toggleItemDelete($parent.$index, $index)" style = "text-align:center; border: 2px solid white; border-radius: 10px; padding-right: 10px; display:none;"> No </p>
-
+                     <div style="clear: both;"></div>
                 </li>
             </a>
             <li class="noHighlight">
                 <form role="form" ng-submit="addItem($index)">
-                    <input ng-model="itemName[$index]" class="newInput" id="newItemNameInput" type = "text" placeholder = "Add New Item" />
+                    <input ng-model="itemName[$index]" class="newInput" id="newItemNameInput" type = "text" placeholder = "Name" />
                     &nbsp;
-                    <input ng-model="itemPoints[$index]"  class="newInput" id="newItemPointsInput" type = "text" placeholder = "Points" />
+                    <input ng-model="itemPoints[$index]"  class="newInput" id="newItemPointsInput" type = "text" placeholder = "Pts" />
                     <span style = "font-size:20px">/</span>
-                    <input ng-model="itemPossiblePoints[$index]"  class="newInput" id="newItemPossiblePointsInput" type = "text" placeholder = "Possible Points" />
+                    <input ng-model="itemPossiblePoints[$index]"  class="newInput" id="newItemPossiblePointsInput" type = "text" placeholder = "Tot." />
                     &nbsp;
                     <input type="submit" class="minorminorButton" value="Add" />
                 </form>
@@ -39,7 +42,7 @@
     </span>
     <li class="noHighlight">
         <form role="form" ng-submit="addSection()">
-            <input ng-model="sectionName" class="newAssignment" id="newSectionNameInput" type = "text" placeholder = "Add Section" list = "browsers" />
+            <input ng-model="sectionName" class="newAssignment" id="newSectionNameInput" type = "text" placeholder = "Section" list = "browsers" />
             <datalist id = "browsers">
                 <option value = "Assignments" />
                 <option value = "Discussion" />

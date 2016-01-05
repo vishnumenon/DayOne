@@ -10,6 +10,7 @@
         <h2 class = "courseStatus" style = "display: none; font-size: 20px;"> Delete This Course? &nbsp;&nbsp; <p ng-click = "removeCourse($index)" style = "background-color: red; text-align:center; border: 1px solid white; border-radius: 10px; padding-left: 10px; padding-right: 10px; font-size:20px;"> Yes</p> &nbsp;&nbsp;<p ng-click ="toggleDelete($index)" style = "text-align:center; border: 1px solid white; border-radius: 10px; padding-right: 10px; font-size:20px;"> No </p> </h2>
         <h3 class = "possibleHomeGrade" style = "display:none;" >({{100*getCourseAverage(course) | number: 3}}%)</h3> 
         <h3 class = "possibleHomeGrade" >({{100*getRunningCourseAverage(course) | number: 3}}%)</h3>
+        <div style="clear: both;"></div>
     </li>
     </a>
     <li class="noHighlight">
