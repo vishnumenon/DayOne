@@ -23,18 +23,16 @@
                 <li>
                     <p class = "itemNumber">{{item.name}} - <span ng-if="predictive" ng-click="changePoints($parent.$parent.$index, $index, -1)" class="fa fa-minus-square"></span> {{item.points}}/{{item.possiblePoints}} <span ng-if="predictive" ng-click="changePoints($parent.$parent.$index, $index, 1)" class="fa fa-plus-square"></span></p>
                     <p class = "itemPercent">({{100.0 * item.points / item.possiblePoints | number : 2}}%)</p> 
-                     <p class = "deleteSection" style = "display:none;"> Delete This Item? </p> <p class = "deleteSection" ng-click = "removeItem($parent.$index, $index)" style = "background-color: red; text-align:center; border: 1px solid white; border-radius: 5px; padding-left: 10px; padding-right: 15px; display:none;"> Yes </p> <p class = "deleteSection" ng-click = "toggleItemDelete($parent.$index, $index)" style = "text-align:center; border: 1px solid white; border-radius: 5px; padding-right: 12px; padding-left:12px; display:none;"> No </p>
+                     <p class = "deleteSection" style = "display:none; font-size:18px;"> Delete This Item? </p> <p class = "deleteSection" ng-click = "removeItem($parent.$index, $index)" style = "background-color: red; text-align:center; border: 1px solid white; border-radius: 5px; padding-left: 10px; padding-right: 15px; display:none;font-size:18px;"> Yes </p> <p class = "deleteSection" ng-click = "toggleItemDelete($parent.$index, $index)" style = "text-align:center; border: 1px solid white; border-radius: 5px; padding-right: 10px; padding-left:10px; display:none;font-size:18px;"> No </p>
                      <div style="clear: both;"></div>
                 </li>
             </a>
             <li class="noHighlight">
                 <form role="form" ng-submit="addItem($index)">
-                    <input ng-model="itemName[$index]" class="newInput" id="newItemNameInput" type = "text" placeholder = "Name" />
-                    &nbsp;
-                    <input ng-model="itemPoints[$index]"  class="newInput" id="newItemPointsInput" type = "text" placeholder = "Pts" />
+                    <input ng-model="itemName[$index]" id="newItemNameInput" type = "text" placeholder = "Add Item" />
+                    <input ng-model="itemPoints[$index]"  class="newInput" id="newItemPointsInput" type = "text" placeholder = "Points" />
                     <span style = "font-size:20px">/</span>
-                    <input ng-model="itemPossiblePoints[$index]"  class="newInput" id="newItemPossiblePointsInput" type = "text" placeholder = "Tot." />
-                    &nbsp;
+                    <input ng-model="itemPossiblePoints[$index]"  class="newInput" id="newItemPossiblePointsInput" type = "text" placeholder = "Total" />
                     <input type="submit" class="minorminorButton" value="Add" />
                 </form>
             </li>
@@ -42,7 +40,7 @@
     </span>
     <li class="noHighlight">
         <form role="form" ng-submit="addSection()">
-            <input ng-model="sectionName" class="newAssignment" id="newSectionNameInput" type = "text" placeholder = "Section" list = "browsers" />
+            <input ng-model="sectionName" class="newAssignment" id="newSectionNameInput" type = "text" placeholder = "Add Section" list = "browsers" />
             <datalist id = "browsers">
                 <option value = "Assignments" />
                 <option value = "Discussion" />
@@ -57,9 +55,7 @@
                 <option value = "Tests" />
                 <option value = "Other" />
             </datalist>
-            &nbsp;
             <input ng-model="sectionWeight" class="newInput" id="newSectionWeightInput" type = "text" placeholder = "Weight" />
-            &nbsp;
             <input type="submit" class="minorButton" value="Add" />
         </form>
     </li>

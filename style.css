@@ -189,9 +189,9 @@ html {
 
 .deleteSection{
     display: inline-block;
-    font-size: 20px !important;
+    font-size: 20px;
     text-align: left;
-    margin: 10px; 
+    margin: 4px; 
 }
 
 .invertedInput {
@@ -279,19 +279,19 @@ option{
 
 
 #newItemPossiblePointsInput, #newItemPointsInput {
-    width: 17% !important;
+    width: 18.5% !important;
     margin-bottom: 20px;
     text-align: center;
+    font-size: 18px;
 }
 
 #newSectionWeightInput{
-	width: 30%;
+	width: 24%;
     
 }
 
 #newSectionNameInput{
-    width: 40%;
-    
+    width: 56%;
 }
 
 .newInput:focus {
@@ -434,8 +434,17 @@ option{
 }
 
 #newItemNameInput{
-    width:40%;
-    font-size: 90px;
+    font-family: 'Josefin Sans', Helvetica, sans;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 7px;
+    background-color: transparent;
+    border: 1px white solid;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    margin-top: 2%;
+    width: 38%;
 }
 
 .headerList li{
@@ -447,7 +456,7 @@ option{
     right: 10px;
     top: 10px;
     display: inline;
-    font-size: 16px;
+    font-size: 20px;
     margin-left: 21%;
 }
 
