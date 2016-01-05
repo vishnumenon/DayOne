@@ -191,10 +191,8 @@ html {
     display: inline-block;
     font-size: 20px !important;
     text-align: left;
-    margin: 15px;
-    font-style: italic;
+    margin: 10px; 
 }
-
 
 .invertedInput {
     font-family: 'Josefin Sans', Helvetica, sans;
@@ -254,9 +252,17 @@ option{
 }
 
 .itemNumber , .itemPercent {
-    font-size: 14pt;
+    font-size: 13pt;
     margin-top: 3px;
     margin-bottom: 3px;
+}
+
+.itemNumber{
+    margin-left: -10%;
+}
+
+.itemPercent{
+    margin-right: -15%;
 }
 
 .fa-plus-square, .fa-minus-square {
@@ -384,9 +390,10 @@ option{
     padding-right: 50px;
 }
 
+
 .nameAndWeight, .sectionAverage {
     font-style: italic;
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 4px;
     margin-bottom: 4px;
 }
