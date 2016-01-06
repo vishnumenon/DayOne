@@ -2,6 +2,15 @@
     box-sizing: border-box;
 }
 
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 body, html {
     width: 100%;
     height: 100%;
@@ -44,7 +53,7 @@ html {
     left: 10px;
 }
 
-.courseStatus p{
+.courseStatus *{
     display: inline;
 }
 
@@ -159,13 +168,24 @@ html {
     padding-right: 5px !important;
 }
 
-#courseList  li > h2{
+#courseList li div.courseStatus{
     display: inline;
     font-weight: 400;
     font-size: 20pt;
 }
 
-#courseList li > h3{
+#courseList li div.courseStatus{
+    display: inline;
+    font-weight: 400;
+    font-size: 20pt;
+}
+
+.delMes {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+#courseList li h3 {
 	display: inline;
     font-weight: 300;
     font-size: 18pt;
@@ -189,7 +209,6 @@ html {
 
 .deleteSection{
     display: inline-block;
-    font-size: 20px;
     text-align: left;
     margin: 4px; 
 }
@@ -304,6 +323,7 @@ option{
 	font-weight: 300;
     font-size: 45pt;
     text-align: center;
+    margin-bottom: 15px;
 }
 
 .possibleGrade{
@@ -365,7 +385,6 @@ option{
  	margin-left: 20%;
     margin-right:20%; 
     margin-bottom: 5%; 
-    margin-top: -10%;
 }
 
 #switchView{  
