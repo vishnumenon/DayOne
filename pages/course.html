@@ -32,9 +32,9 @@
             <li class="noHighlight">
                 <form role="form" ng-submit="addItem($index)">
                     <input ng-model="itemName[$index]" id="newItemNameInput" type = "text" placeholder = "Add Item" />
-                    <input ng-model="itemPoints[$index]"  class="newInput" id="newItemPointsInput" type = "text" placeholder = "Points" />
+                    <input ng-model="itemPoints[$index]"  class="newInput" id="newItemPointsInput" type = "number" placeholder = "Points" />
                     <span style = "font-size:20px">/</span>
-                    <input ng-model="itemPossiblePoints[$index]"  class="newInput" id="newItemPossiblePointsInput" type = "text" placeholder = "Total" />
+                    <input ng-model="itemPossiblePoints[$index]"  class="newInput" id="newItemPossiblePointsInput" type = "number" placeholder = "Total" />
                     <input type="submit" class="minorminorButton" value="Add" />
                 </form>
             </li>
@@ -57,7 +57,7 @@
                 <option value = "Tests" />
                 <option value = "Other" />
             </datalist>
-            <input ng-model="sectionWeight" class="newInput" id="newSectionWeightInput" type = "text" placeholder = "Weight" />
+            <input ng-model="sectionWeight" class="newInput" id="newSectionWeightInput" type = "number" placeholder = "Weight" />
             <input type="submit" class="minorButton" value="Add" />
         </form>
     </li>
